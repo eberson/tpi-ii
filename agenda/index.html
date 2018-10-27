@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Agenda</title>
+
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous" />
+
+    <!--
+        Adicionar o JS no head de uma página aumenta o tempo de loading (tempo que o
+        usuário fica esperando a tela carregar) e impacta na experiência do usuário
+    -->
+</head>
+
+<body>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Agenda de Contatos</h1>
+            </div>
+        </div>
+
+        <div class="row row-spaced">
+            <div class="col-md-1 offset-11">
+                <button id="novo-contato" type="button" class="btn btn-primary">Novo</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" style="width: 25%">Nome</th>
+                            <th scope="col" style="width: 10%">Telefone</th>
+                            <th scope="col" style="width: 25%">E-mail</th>
+                            <th scope="col" style="width: 10%">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <a href="javascript:;" class="btn btn-outline-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                                <a href="javascript:;" class="btn btn-outline-success">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td></td>
+                        </tr>                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 bg-dark text-light">
+                <p>Desenvolvido por 2H3</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- incluimos o JS no final do body de forma que eles sejam carregados quando a 
+        pagina estiver sendo exibida-->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>    
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/agenda.js"></script>
+</body>
+</html>
