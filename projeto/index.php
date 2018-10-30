@@ -17,8 +17,8 @@
             <div class="avatar"></div>
             <div class="form-box">
                 <form action="" method="">
-                    <input name="user" type="text" placeholder="usuário">
-                    <input type="password" placeholder="senha">
+                    <input name="usr" type="text" placeholder="usuário">
+                    <input name="pwd" type="password" placeholder="senha">
                     <button class="btn btn-info btn-block login" type="submit">Entrar</button>
                 </form>
             </div>

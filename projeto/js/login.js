@@ -1,13 +1,22 @@
 $(function(){
-    var textfield = $("input[name=user]");
+    var usrTextField = $("input[name=usr]"); //através do JQuery pegamos, na pagina, um input cujo name seja usr
+    var pwdTextField = $("input[name=pwd]");
     
     $('button[type="submit"]').click(function(e) {
         e.preventDefault();
 
         //little validation just to check username
-        if (textfield.val() != "") {
-            //$("body").scrollTo("#output");
+        if (usrTextField.val() != "") {
+            $.post("backend/login.php", {
+                "username": usrTextField.val(),
+                "password": pwdTextField.val()
+            }, function(data){
+                $("#output").addClass("alert alert-success animated fadeInUp")
+                            .html("Seja bem vindo " + "<span style='text-transform:uppercase'>" + data.name + "</span>");
+                $("#output").removeClass(' alert-danger');    
+            }, "json");
 
+            /*
             $("#output").addClass("alert alert-success animated fadeInUp").html("Welcome back " + "<span style='text-transform:uppercase'>" + textfield.val() + "</span>");
             $("#output").removeClass(' alert-danger');
             
@@ -31,6 +40,8 @@ $(function(){
             $(".avatar").css({
                 "background-image": "url('http://api.randomuser.me/0.3.2/portraits/women/35.jpg')"
             });
+
+            */
         } else {
             //remove success mesage replaced with error message
             $("#output").removeClass(' alert alert-success');
