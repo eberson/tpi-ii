@@ -20,15 +20,33 @@
 
 <body>
     <div class="container" >
-        <div class="row">
+        <div class="row row-spaced">
             <div class="col-md-12">
                 <h1>Agenda de Contatos</h1>
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <p>O contato foi salvo com sucesso!</p>
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div class="row row-spaced">
             <div class="col-md-1 offset-11">
-                <button id="novo-contato" type="button" class="btn btn-primary">Novo</button>
+                <button id="novo-contato" 
+                        type="button" 
+                        class="btn btn-primary" 
+                        data-toggle="modal" 
+                        data-target="#novoContato">
+                    Novo
+                </button>
             </div>
         </div>
 
@@ -52,9 +70,9 @@
                                 <a href="javascript:;" class="btn btn-outline-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
-                                <a href="javascript:;" class="btn btn-outline-success">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#editContato" class="btn btn-outline-success">
+                                    <i class="fas fa-edit"></i>
+                                </a>
                             </td>
                         </tr>
                         <tr>
@@ -74,6 +92,81 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Novo Contato -->
+    <div class="modal fade" 
+         id="novoContato" 
+         tabindex="-1" 
+         role="dialog" 
+         aria-labelledby="novoContatoTitle" 
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="novoContatoTitle">Novo Contato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Informe o nome do contato" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Informe o e-mail do contato" />
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" class="form-control" id="telefone" placeholder="Informe o telefone do contato" />
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Editar Contato -->
+    <div class="modal fade" 
+         id="editContato" 
+         tabindex="-1" 
+         role="dialog" 
+         aria-labelledby="editContatoTitle" 
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editContatoTitle">Editar Contato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <p>Essa é a dialog para editar o contato</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
 
     <!-- incluimos o JS no final do body de forma que eles sejam carregados quando a 
         pagina estiver sendo exibida-->
